@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  },
+  "name": "code",
+  "version": "1.0.0",
+  "description": "Here we create a todo list using express , mongo and nodejs with frontent template as ejs ",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sandeep vaid",
+  "license": "ISC"
+}
