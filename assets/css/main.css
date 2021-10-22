@@ -51,9 +51,9 @@ h1{
 
 #cat-date{
     display: flex;
-    width: 100%;
-    
+    width: 100%; 
 } 
+
 
 #date{
     border: 1px solid grey;
@@ -102,20 +102,20 @@ h1{
 
 
 /* ACTION BUTTON FOR ADD AND DELETE THE TASK*/
-#action-button{
+.action-button{
     display: flex;
     width: 100%;
-    justify-content: center;
+    /* justify-content: center; */
     padding: 30px;
 }
 
-#action-button button{
+.action-button button{
     height: 50px;
     width: 150px;
     cursor: pointer;
 }
 
-#action-button span{
+.action-button span{
     font-size: 1rem;
     font-family: 'Courier New', Courier;
     font-weight: 600;
@@ -123,12 +123,16 @@ h1{
 
 #add{
     background-color: rgb(32, 112, 232);
+    position: relative;
+    left: 20%;
 }
 #delete{
+
+    position: absolute;
+    top: 16.8rem;
+    left: 53%;
     background-color: rgba(221, 15, 15, 0.856);
 }
-
-
 
 
   
@@ -136,11 +140,14 @@ h1{
 
 /* CONTAINER HANDLES THE WHOLE LIST ITEM */
 #task-item{
+    /* width: 75%; */
     display: flex;
     border-top: 1px solid grey;
     padding: 1rem;
     justify-content: space-between;
 }
+
+
 
 /* LEFT PART OF LIST */
 #left-part > input{
@@ -223,3 +230,25 @@ h1{
 }
 
 
+/* MEDIA QUERY FOR MOBILE DEVICE */
+
+@media  (max-width:600px) {
+    #task-item{
+        width: 75%;
+    }
+
+    #add{
+        left: 0%;
+    }
+    #delete{
+        left: 60%;
+    }
+
+    #description{
+        width: 79%;
+    }
+
+    #cat-date{
+        width: 79%;
+    }
+}

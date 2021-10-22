@@ -13,7 +13,7 @@
 
     <!-- THIS CONTAINER HANDLES THE WHOLE APP UI -->
     <div id="main-div">
-        <form action="">
+        <form action="/add-todo" method="post">
 
             <!-- DESCRIPTION FOR OUR TODO TASK HAVING 100% WIDTH-->
             <div id="description">
@@ -26,7 +26,7 @@
                 <!-- CONTAINER FOR CATEGORY DROPDOWN -->
                 <div class="dropdown">
                     <p class="header">Category</p>
-                    <select class="header" id = "myList"  >  
+                    <select class="header" id = "myList" name="selectpicker" > 
                         <option> Choose a Category </option>  
                         <option> College </option>  
                         <option> Coding </option>  
@@ -37,20 +37,16 @@
                 <!-- CONTAINER FOR DUE DATE FOR OUR TODO TASK -->
                 <div id="date">
                     <p class="header">DUE DATE</p>
-                    <input type="date" id="due_date" name="due_date">
+                    <input type="date" id="due_date" name="due_date" required>
                 </div>
               
             </div>
 
             <!-- THIS CONTAINER HANDLES THE ACTION BUTTON TO ADD AND DELETE THE TASK -->
-            <div id="action-button">
+            <div class="action-button">
                 <button id="add">
                     <span>Add Task</span>
                     <i class="fas fa-lg fa-plus"></i>
-                </button>
-                <button id="delete">
-                    <span> Delete task</span>
-                    <i class="fas fa-lg fa-trash-alt"></i>
                 </button>
             </div>
 
@@ -59,29 +55,43 @@
         <!-- LIST OF ITEMS -->
 
         <!-- THIS CONTAINER HANDLES THE LIST OF TODO TASK  -->
-        <div id="list-of-task">
-            <ul>
+        <form action="/delete-todo" method="post">
+            <div id="list-of-task">
+                <ul>
+    
+                    <!-- I DIVIDE ONE LIST IN TWO PARTS LEFT AND RIGHT PART SUCH THAT DESCRIPTION AND DUE DATE COME TO LEFT PART AND CATEGORY COME TO RIGHT PART -->
 
-                <!-- I DIVIDE ONE LIST IN TWO PARTS LEFT AND RIGHT PART SUCH THAT DESCRIPTION AND DUE DATE COME TO LEFT PART AND CATEGORY COME TO RIGHT PART -->
-                <li id="task-item">
-                  <div id="left-part">
-                    <input type="checkbox">
-                    <label for="">my task</label>
-                    
-                    <div id="date-display">
-                        <i class="fas   fa-calendar-week"></i>
-                        <p> 29 Apr ,2021</p>
-                    </div>
-                  </div> 
-                  
-                  <div id="right-part">
-                    <p>Work</p>
-                  </div>
-                </li>
-            </ul>
-        </div>
+                    <% for(let i of todo){%>
+                        <li id="task-item">
+                        <div id="left-part">
+                            <input type="checkbox" name="<%= i._id%>">
+                            <label for=""><%= i.description%></label>
+                            
+                            <div id="date-display">
+                                <i class="fas   fa-calendar-week"></i>
+                                <p><%= i.due_date%></p>
+                            </div>
+                        </div> 
+                        
+                        <div id="right-part" class="category-color">
+                            <p><%= i.category%></p>
+                        </div>
+                        </li>
+                    <%}%>
+                </ul>
+            </div>
+            <div class="action-button">
+                <button id="delete">
+                    <span> Delete task</span>
+                    <i class="fas fa-lg fa-trash-alt"></i>
+                </button>
+            </div>
+            
+        </form>
+
+
 
 
     </div>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </body>

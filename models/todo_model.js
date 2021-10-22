@@ -9,12 +9,12 @@ const ToDoSchema = new mongoose.Schema({
         required:true
     },
 
-    catgory:{
+    category:{
         type:String,
         required:true
     },
     due_date:{
-        type:Date,
+        type:String,
         required:true
     }
 });

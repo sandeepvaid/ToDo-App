@@ -9,6 +9,7 @@ const db = require("./config/mongoose");
 //importing the collection
 const ToDOList = require('./models/todo_model');
 
+app.use(express.urlencoded());
 //use express router
 app.use('/',require('./routes'));
 
