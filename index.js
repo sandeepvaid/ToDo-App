@@ -6,6 +6,9 @@ const app = express();
 //Set up the mongoose database
 const db = require("./config/mongoose");
 
+//importing the collection
+const ToDOList = require('./models/todo_model');
+
 //use express router
 app.use('/',require('./routes'));
 
@@ -13,6 +16,8 @@ app.use('/',require('./routes'));
 app.set('view engine','ejs');
 app.set('views','./views');
 
+//Adding static files to the project
+app.use(express.static("assets"));
 
 
 app.listen(port,(err)=>{

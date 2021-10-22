@@ -1,10 +1,87 @@
+<html lang="en">
 <head>
-    <title>
-        <%= title%>
-    </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-
-    <body>
-        <h1>This is home page of ToDo</h1>
-    </body>
+    <link rel="stylesheet" href="css/main.css">
 </head>
+<body>
+    <h1>ToDO App</h1>
+
+    <!-- THIS CONTAINER HANDLES THE WHOLE APP UI -->
+    <div id="main-div">
+        <form action="">
+
+            <!-- DESCRIPTION FOR OUR TODO TASK HAVING 100% WIDTH-->
+            <div id="description">
+                <span class="header" >DESCRIPTION</span>
+                <input type="text" name="description" placeholder="Explain your task" required>
+            </div>
+            
+            <!-- THIS CONTAINER HANDLES BOTH THE CATEGORY AND DATE WITH 50% WIDTH-->
+            <div id="cat-date">
+                <!-- CONTAINER FOR CATEGORY DROPDOWN -->
+                <div class="dropdown">
+                    <p class="header">Category</p>
+                    <select class="header" id = "myList"  >  
+                        <option> Choose a Category </option>  
+                        <option> College </option>  
+                        <option> Coding </option>  
+                        <option> DSA </option>  
+                        <option> Workout </option>  
+                    </select>
+                </div>
+                <!-- CONTAINER FOR DUE DATE FOR OUR TODO TASK -->
+                <div id="date">
+                    <p class="header">DUE DATE</p>
+                    <input type="date" id="due_date" name="due_date">
+                </div>
+              
+            </div>
+
+            <!-- THIS CONTAINER HANDLES THE ACTION BUTTON TO ADD AND DELETE THE TASK -->
+            <div id="action-button">
+                <button id="add">
+                    <span>Add Task</span>
+                    <i class="fas fa-lg fa-plus"></i>
+                </button>
+                <button id="delete">
+                    <span> Delete task</span>
+                    <i class="fas fa-lg fa-trash-alt"></i>
+                </button>
+            </div>
+
+        </form>
+
+        <!-- LIST OF ITEMS -->
+
+        <!-- THIS CONTAINER HANDLES THE LIST OF TODO TASK  -->
+        <div id="list-of-task">
+            <ul>
+
+                <!-- I DIVIDE ONE LIST IN TWO PARTS LEFT AND RIGHT PART SUCH THAT DESCRIPTION AND DUE DATE COME TO LEFT PART AND CATEGORY COME TO RIGHT PART -->
+                <li id="task-item">
+                  <div id="left-part">
+                    <input type="checkbox">
+                    <label for="">my task</label>
+                    
+                    <div id="date-display">
+                        <i class="fas   fa-calendar-week"></i>
+                        <p> 29 Apr ,2021</p>
+                    </div>
+                  </div> 
+                  
+                  <div id="right-part">
+                    <p>Work</p>
+                  </div>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+    <script src="main.js"></script>
+</body>

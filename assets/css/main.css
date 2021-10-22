@@ -1,0 +1,225 @@
+/* WHOLE HTML DOCUMENT */
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* COMMON CLASSES */
+
+.header{
+    color: gray;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: smaller;
+    padding: 5px;
+}
+
+
+
+/* MAIN HEADING FOR TODO APPLICATION */
+h1{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(25, 180, 219);
+}
+
+/* MAIN CONTAINER FOR HANDLING THE WHOLE HTML DOCUMENT  */
+
+#main-div{
+    width: 600px;
+    margin: 0 auto;
+
+}
+
+
+/* DESCRIPTION PART FOR OUR TODO INPUT */
+#description{
+    border: 1px solid grey;
+    width: 100%;
+}
+
+#description > input{
+    padding: 5px;
+    height: 60px;
+    width: 100%;
+    border: none;
+    outline: none;
+    
+}
+
+/* CONTAINER HANDLES THE CATEGORY DROPDOWN AND DUE DATE FOR TODO TASK */
+
+#cat-date{
+    display: flex;
+    width: 100%;
+    
+} 
+
+#date{
+    border: 1px solid grey;
+    width: 50%;
+}
+
+
+#date>input{
+    font-size: 15px;
+    font-weight: 400;
+    padding: 10px;
+    border: none;
+    text-align: center;
+    outline: none;
+}
+
+/* CSS TO HANDLE THE CATEGORY DROPDOWN */
+
+.dropbtn {
+    /* margin: auto; */
+    width: 100%;
+    display: flex;
+    color: black;
+    justify-content: space-between;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+.dropdown {
+    width: 50%;
+    border: 1px solid grey;
+    display: inline-block;
+}
+
+#myList{
+    width: 100%;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}
+
+
+
+/* ACTION BUTTON FOR ADD AND DELETE THE TASK*/
+#action-button{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 30px;
+}
+
+#action-button button{
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+}
+
+#action-button span{
+    font-size: 1rem;
+    font-family: 'Courier New', Courier;
+    font-weight: 600;
+}
+
+#add{
+    background-color: rgb(32, 112, 232);
+}
+#delete{
+    background-color: rgba(221, 15, 15, 0.856);
+}
+
+
+
+
+  
+/* LIST OF TODO TASK */
+
+/* CONTAINER HANDLES THE WHOLE LIST ITEM */
+#task-item{
+    display: flex;
+    border-top: 1px solid grey;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+/* LEFT PART OF LIST */
+#left-part > input{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+#left-part > label{
+    padding: 10px;
+    position: relative;
+    top: -5px;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+}
+
+
+/* CSS FOR DISPLAYING THE DUE DATE FOR OUR TASK */
+#date-display p{
+    display: inline-block;
+    position: relative;
+    left:50px;
+    top: -2px;
+    font-family: sans-serif;
+    font-size: 12px;
+}
+#date-display i{
+    display: inline-block;
+    position: relative;
+    left:43px;
+    color: grey;
+
+}
+
+/* PSEUDO CLASSES FOR LEFT PART OF LIST */
+#left-part label:before {
+    content:'';
+    -webkit-appearance: none;
+    background-color: transparent;
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+#left-part input:checked + label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 9px;
+    width: 6px;
+    height: 14px;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+#left-part input:checked + label {
+    text-decoration: line-through;
+}
+
+
+
+/* RIGHT PART OF THE LIST ITEM */
+#right-part{
+    background-color: red;
+    height: 50px;
+    width: 100px;
+    border-radius: 4px 4px 4px 4px;
+}
+
+#right-part > p{
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    
+}
+
+
