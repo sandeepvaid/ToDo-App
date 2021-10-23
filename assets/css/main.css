@@ -4,6 +4,9 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body{
+    background-image:url("../images/Cloudy.svg");
+}
 
 /* COMMON CLASSES */
 
@@ -20,21 +23,24 @@
 h1{
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
-    color: rgb(25, 180, 219);
+    color: rgb(253, 253, 253);
 }
 
 /* MAIN CONTAINER FOR HANDLING THE WHOLE HTML DOCUMENT  */
-
 #main-div{
     width: 600px;
     margin: 0 auto;
-
+    border-radius: 9px;
+    background: #EFEEEE;
+    box-shadow:  5px 5px 16px #9b9b9b,
+             -5px -5px 16px #ffffff;
+    
 }
 
 
 /* DESCRIPTION PART FOR OUR TODO INPUT */
 #description{
-    border: 1px solid grey;
+    
     width: 100%;
 }
 
@@ -56,15 +62,16 @@ h1{
 
 
 #date{
-    border: 1px solid grey;
+    border: 1px solid rgb(255, 255, 255);
     width: 50%;
 }
 
 
 #date>input{
+    width: 100%;
     font-size: 15px;
     font-weight: 400;
-    padding: 10px;
+    padding: 4px;
     border: none;
     text-align: center;
     outline: none;
@@ -88,7 +95,7 @@ h1{
 
 .dropdown {
     width: 50%;
-    border: 1px solid grey;
+    border: 1px solid rgb(255, 255, 255);
     display: inline-block;
 }
 
@@ -116,22 +123,26 @@ h1{
 }
 
 .action-button span{
+    color: white;
     font-size: 1rem;
     font-family: 'Courier New', Courier;
     font-weight: 600;
 }
 
+.action-button i{
+    color: white;
+}
 #add{
-    background-color: rgb(32, 112, 232);
+    /* background-color: rgb(32, 112, 232); */
     position: relative;
     left: 20%;
 }
 #delete{
 
     position: absolute;
-    top: 16.8rem;
+    top: 16rem;
     left: 53%;
-    background-color: rgba(221, 15, 15, 0.856);
+    /* background-color: rgba(221, 15, 15, 0.856); */
 }
 
 
@@ -251,4 +262,32 @@ h1{
     #cat-date{
         width: 79%;
     }
+}
+
+
+
+/* ADVANCE BUTTON CSS */
+
+.advance-button {
+    width: 150px;
+    height: 100px;
+    /* font-size: 18px; */
+    border: 1px solid rgba(0, 0, 0, 0.0);
+    border-radius: 12.5px;
+    background: #050516;
+    box-shadow: 16px 16px 18px #aaaaaa,
+                -16px -16px 18px #ffffff;
+}
+   
+.advance-button:active {
+box-shadow: 16px 16px 18px #aaaaaa inset,
+            -16px -16px 18px #ffffff inset;
+}
+
+
+
+/*scroll bar for  list of items */
+ul{
+    max-height: 250px;
+    overflow-y: scroll;
 }
